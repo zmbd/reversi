@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Snowpack App</title>
-  </head>
-  <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="module" src="/dist/index.js"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reversi</title>
+  <style>
+    #board {
+      position: absolute;
+      width: 428px;
+      height: 428px;
+      border: 1px solid black;
+    }
+    .square {
+      position: absolute;
+      border: 1px solid black;
+      gap: 3px;
+      width: 50px;
+      height: 50px;
+      background-color: green;
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    .disc {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    .white {
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .black {
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    #scores {
+      position: absolute;
+      width: 428px;
+      top: 600px; 
+      margin: 0;
+      padding: 0;
+    }
+
+    #scores h2 {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Reversi</h1>
+    <div style="display: inline-flex; width: auto;">
+      <h1>
+        Current turn: 
+      </h1>
+      <h1 id="current-turn"></h1>
+    </div>
+    <div id="board"></div>
+    <div id="scores">
+      <h1>Current scores</h1>
+      <div>
+        <h2>Score of Black: <h2 id="black"></h2></h2>
+      </div>
+      <div>
+        <h2>Score of White: <h2 id="white"></h2></h2>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/dist/main.js"></script>
+</body>
 </html>
