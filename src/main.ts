@@ -1,4 +1,3 @@
-import Board from "./model/Board";
 import Game from "./model/Game";
 
 function init() {
@@ -14,10 +13,6 @@ function init() {
   ];
 
   const game = new Game(board);
-
-  // boardElement && boardElement.addEventListener("click", () => {
-  //   reversi.drawBoardDiscs();
-  // });
 }
 
 window.onload = init;
