@@ -12,10 +12,10 @@ abstract class BoardDrawer {
   }
 
   private addSquareStyle(i: number, direction: "top" | "left", element: HTMLElement): void {
-    const style = `${(this.size + this.gap) * i + this.gap}px`;
+    const position = `${(this.size + this.gap) * i + this.gap}px`;
 
-    if (direction === "top") element.style.top = style;
-    else element.style.left = style;
+    if (direction === "top") element.style.top = position;
+    else element.style.left = position;
   }
 
   private returnAddedSquare(row: number, col: number): HTMLElement {

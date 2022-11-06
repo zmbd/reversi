@@ -1,4 +1,4 @@
-export interface DiskPosInterface {
-  i: number,
-  j: number,
+export interface DiskPosType {
+  row: number,
+  col: number,
 };

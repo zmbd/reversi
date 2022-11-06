@@ -1,3 +1,4 @@
+import { getPosition } from "../utils/position";
 import BoardDrawer from "./BoardDrawer";
 import DomElements from "./DomElements";
 import Game from "./Game";
@@ -12,11 +13,16 @@ class Board extends BoardDrawer {
     this.board = board;
   }
 
-  appendChild(child: HTMLElement): void {
-    throw new Error("Method not implemented.");
-  }
-  addEventListener(event: string, func: Function): void {
-    throw new Error("Method not implemented.");
+  public getDiscsAmount(disc: number): number {
+    let discsAmount = 0;
+
+    for (let i = 0; i < this.rows * this.columns; i++) {
+      const { row, col } = getPosition(i, this.columns);
+
+      if (this.board[row][col] === disc) discsAmount++;
+    }
+
+    return discsAmount;
   }
 
   get getRows() {
@@ -33,6 +39,14 @@ class Board extends BoardDrawer {
 
   get getBoard() {
     return this.board;
+  }
+
+  get getWhiteDiscsAmount() {
+    return this.getDiscsAmount(2);
+  }
+
+  get getBlackDiscsAmount() {
+    return this.getDiscsAmount(1);
   }
 }
 
