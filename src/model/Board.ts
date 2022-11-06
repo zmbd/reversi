@@ -1,7 +1,5 @@
 import { getPosition } from "../utils/position";
 import BoardDrawer from "./BoardDrawer";
-import DomElements from "./DomElements";
-import Game from "./Game";
 
 class Board extends BoardDrawer {
   private rows = 8;
